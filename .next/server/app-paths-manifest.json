@@ -1,5 +1,8 @@
 {
   "/page": "app/page.js",
   "/band/page": "app/band/page.js",
-  "/band/the-vault/page": "app/band/the-vault/page.js"
+  "/our-directors/page": "app/our-directors/page.js",
+  "/band/the-vault/page": "app/band/the-vault/page.js",
+  "/percussion/page": "app/percussion/page.js",
+  "/color-guard/page": "app/color-guard/page.js"
 }
