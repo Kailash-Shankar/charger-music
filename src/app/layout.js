@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <SiteHeader />
-        <main>{children}</main>
+        <main className="relative">{children}</main>
       </body>
     </html>
   );

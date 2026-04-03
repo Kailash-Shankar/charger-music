@@ -26,13 +26,13 @@ export default function OrchestraPage() {
           <h2 className="section-heading">About the Program</h2>
           <span className="gold-divider" />
 
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             The Strawberry Crest orchestra program consists of several different ensembles, such as the <strong>concert orchestra</strong>, <strong>symphonic orchestra</strong>, <strong>chamber orchestra</strong>, and <strong>full orchestra</strong>.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             These ensembles perform at school concerts and events, district and state-level music conferences, as well as festive events and special occasions.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-8">
+          <p className="text-gray-700 leading-relaxed mb-8">
             The concert and symphonic orchestras are open to all students. The chamber orchestra is audition-based, and the full orchestra is upon discretion of the orchestra director.
           </p>
 
@@ -46,7 +46,6 @@ export default function OrchestraPage() {
           </a>
         </div>
 
-        {/* Sidebar */}
         <div className="space-y-6">
           <div className="bg-charger-navy text-white p-8 rounded-sm">
             <h3 className="text-xl font-display font-bold mb-4 text-charger-gold">Ensembles</h3>
@@ -70,16 +69,16 @@ export default function OrchestraPage() {
               Orchestra Links
             </h3>
             <Link href="/orchestra/leadership" className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors">
-              🎻 Meet the Leadership
+              {"\uD83C\uDFBB"} Meet the Leadership
             </Link>
             <Link href="/orchestra/photo-gallery" className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors">
-              📷 Photo Gallery
+              {"\uD83D\uDCF7"} Photo Gallery
             </Link>
             <a href={EXTERNAL_LINKS.tickets} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors">
-              🎟 Buy Concert Tickets
+              {"\uD83C\uDF9F"} Buy Concert Tickets
             </a>
             <a href={EXTERNAL_LINKS.cuttime} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors">
-              📅 View Calendar
+              {"\uD83D\uDCC5"} View Calendar
             </a>
           </div>
         </div>

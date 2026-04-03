@@ -16,7 +16,6 @@ export default function BandPage() {
       />
 
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
-        {/* Main content */}
         <div>
           <img
             src="https://static.wixstatic.com/media/407ce4_5e405ee51101466087b3af552674b19a~mv2.jpg/v1/fill/w_600,h_400,al_c,lg_1,q_80,enc_avif,quality_auto/407ce4_5e405ee51101466087b3af552674b19a~mv2.jpg"
@@ -27,7 +26,7 @@ export default function BandPage() {
           <h2 className="section-heading">About the Program</h2>
           <span className="gold-divider" />
 
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             The Strawberry Crest Marching Chargers perform all throughout the year, at football games, parades and festive events, pep rallies, and concerts.{' '}
             <a
               href="https://youtu.be/-hIlobbIsNM"
@@ -39,11 +38,11 @@ export default function BandPage() {
             </a>
           </p>
 
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             Their halftime show theme this year is <strong className="text-white">Feelin&apos; The Funk</strong>, centered around funk music through the ages, from James Brown&apos;s <em>I Feel Good</em> to Bruno Mars&apos; <em>Uptown Funk</em>.
           </p>
 
-          <p className="text-gray-300 leading-relaxed mb-8">
+          <p className="text-gray-700 leading-relaxed mb-8">
             All students are welcome to join the Marching Charger band, regardless of prior band experience or musical background. Students are expected to attend Summer Band Camp, which takes place during the last 2 weeks of summer break.
           </p>
 
@@ -62,23 +61,20 @@ export default function BandPage() {
           </div>
         </div>
 
-        {/* Sidebar */}
         <div className="space-y-6">
-          {/* The Vault CTA */}
           <Link
             href="/band/the-vault"
             className="block bg-charger-navy text-white p-8 rounded-sm hover:bg-charger-navy-light transition-colors group text-center"
           >
-            <div className="text-charger-gold text-4xl mb-2">🏛</div>
+            <div className="text-charger-gold text-4xl mb-2">{"\uD83C\uDFDB"}</div>
             <h3 className="text-xl font-display font-bold mb-2 group-hover:text-charger-gold transition-colors">
               The Vault
             </h3>
             <p className="text-gray-300 text-sm">
-              Explore the full history of the Marching Chargers — 15+ years of performances.
+              Explore the full history of the Marching Chargers &mdash; 15+ years of performances.
             </p>
           </Link>
 
-          {/* Quick links */}
           <div className="bg-black rounded-sm border border-white/10 p-6 space-y-3">
             <h3 className="font-bold text-white uppercase tracking-wide text-sm border-b border-charger-gold pb-2 mb-4">
               Quick Links
@@ -89,7 +85,7 @@ export default function BandPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors"
             >
-              📅 View Calendar (CutTime)
+              {"\uD83D\uDCC5"} View Calendar (CutTime)
             </a>
             <a
               href={EXTERNAL_LINKS.tickets}
@@ -97,13 +93,13 @@ export default function BandPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors"
             >
-              🎟 Purchase Concert Tickets
+              {"\uD83C\uDF9F"} Purchase Concert Tickets
             </a>
             <Link
               href="/multimedia"
               className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors"
             >
-              📷 Photo Galleries
+              {"\uD83D\uDCF7"} Photo Galleries
             </Link>
             <a
               href={EXTERNAL_LINKS.donate}
@@ -111,11 +107,10 @@ export default function BandPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-gray-300 hover:text-charger-gold transition-colors"
             >
-              💛 View Fundraisers / Donate
+              {"\uD83D\uDC9B"} View Fundraisers / Donate
             </a>
           </div>
 
-          {/* Band photos */}
           <div className="grid grid-cols-2 gap-2">
             {[
               'https://static.wixstatic.com/media/d5f339_5c9d6a1041454a85b406115ec890a8bc~mv2.jpg/v1/fill/w_206,h_194,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d5f339_5c9d6a1041454a85b406115ec890a8bc~mv2.jpg',

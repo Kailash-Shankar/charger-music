@@ -21,7 +21,7 @@ export default function VaultPage() {
     : MARCHING_SHOWS;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[linear-gradient(180deg,#0f0f0f_0%,#151515_100%)] text-white">
 
       {/* HERO */}
       <section className="relative bg-charger-navy overflow-hidden">
@@ -69,17 +69,17 @@ export default function VaultPage() {
 
       {/* HISTORY */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl font-display font-bold text-charger-navy mb-4">SCHS Band History</h2>
+        <h2 className="text-3xl font-display font-bold text-white mb-4">SCHS Band History</h2>
         <div className="w-16 h-1 bg-charger-gold mx-auto mb-8" />
-        <p className="text-gray-600 text-lg leading-relaxed">
+        <p className="text-gray-300 text-lg leading-relaxed">
           The Strawberry Crest Marching Chargers have a rich, incredible history of performing
           crowd-dazzling halftime shows and showcasing a tremendous degree of musical talent and
-          prowess. Founded in <strong className="text-charger-navy">2009</strong>, the inaugural
-          year&apos;s band was composed of only <strong className="text-charger-navy">33 students</strong> —
+          prowess. Founded in <strong className="text-white">2009</strong>, the inaugural
+          year&apos;s band was composed of only <strong className="text-white">33 students</strong> —
           30 freshmen, 2 sophomores, 1 junior, and no seniors. Even with such limitations, the
           Marching Chargers delivered a successful performance, and the band rapidly grew in both
           size and musical ability. At its largest, the SCHS band had{' '}
-          <strong className="text-charger-navy">126 members!</strong> Over the years, the Marching
+          <strong className="text-white">126 members!</strong> Over the years, the Marching
           Chargers have forged a monumental legacy of musical excellence and impressive performance
           on the field, and strive to uphold that legacy today.
         </p>
@@ -204,7 +204,7 @@ export default function VaultPage() {
             })}
           </div>
 
-          <p className="text-center text-gray-600 text-xs mt-8">
+          <p className="text-center text-gray-500 text-xs mt-8">
             Showing {filteredShows.length} of {MARCHING_SHOWS.length} shows
           </p>
         </div>
@@ -245,16 +245,16 @@ export default function VaultPage() {
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-[linear-gradient(180deg,#181818_0%,#202020_100%)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-display font-bold text-charger-navy">Highlights Over the Years</h2>
+            <h2 className="text-4xl font-display font-bold text-white">Highlights Over the Years</h2>
             <div className="w-16 h-1 bg-charger-gold mx-auto mt-4" />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {VAULT_HIGHLIGHTS.map((h, i) => (
-              <div key={i} className="bg-white rounded-sm overflow-hidden border border-gray-100 group hover:shadow-lg transition-shadow">
+              <div key={i} className="bg-[#111111] rounded-sm overflow-hidden border border-white/10 group hover:shadow-lg transition-shadow">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={h.image}
@@ -270,7 +270,7 @@ export default function VaultPage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {h.caption}{' '}
                     {h.link && (
                       <a

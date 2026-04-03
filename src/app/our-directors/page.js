@@ -7,20 +7,58 @@ export const metadata = {
 };
 
 export default function DirectorsPage() {
+  const featuredDirectors = [
+    DIRECTORS.find((director) => director.name === 'Timothy Trice'),
+    DIRECTORS.find((director) => director.name === 'Damian Johnson'),
+    DIRECTORS.find((director) => director.title === 'Percussion Instructors/Arrangers'),
+    DIRECTORS.find((director) => director.name === 'Darla Wing'),
+  ].filter(Boolean);
+
+  const foundingDirector = DIRECTORS.find((director) => director.founding);
+
   return (
     <InfoSection title="Our Directors" intro="Meet the team behind the Strawberry Crest music program.">
       <div className="grid gap-6 md:grid-cols-2">
-        {DIRECTORS.map((director) => (
-          <article key={director.name} className={`rounded-sm border border-white/10 bg-[#161616] p-6 ${director.wide ? 'md:col-span-2' : ''}`}>
-            <div className="mb-4 aspect-[4/3] overflow-hidden rounded-sm bg-black/40">
-              <img src={director.image} alt={director.name} className="h-full w-full object-cover" />
+        {featuredDirectors.map((director) => (
+          <article
+            key={director.name}
+            className={`rounded-sm border border-white/10 bg-[#161616] p-6 ${director.wide ? 'md:col-span-2 md:grid md:grid-cols-[minmax(260px,340px)_1fr] md:gap-6 md:items-start' : ''}`}
+          >
+            <div className={`mb-4 overflow-hidden rounded-sm bg-black/40 ${director.wide ? 'md:mb-0 md:h-full' : 'aspect-[4/3]'}`}>
+              <img
+                src={director.image}
+                alt={director.name}
+                className={`w-full object-cover ${director.wide ? 'h-full min-h-[260px] md:min-h-[320px]' : 'h-[280px] sm:h-[320px]'}`}
+              />
             </div>
-            <h2 className="text-2xl font-display font-bold text-white">{director.name}</h2>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-charger-gold">{director.title}</p>
-            <p className="whitespace-pre-line text-gray-300 leading-relaxed">{director.bio}</p>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-white">{director.name}</h2>
+              <p className="mb-4 text-sm uppercase tracking-[0.2em] text-charger-gold">{director.title}</p>
+              <p className="whitespace-pre-line text-gray-300 leading-relaxed">{director.bio}</p>
+            </div>
           </article>
         ))}
       </div>
+
+      {foundingDirector ? (
+        <>
+          <div className="mx-auto my-10 h-px max-w-6xl bg-white/10" />
+          <article className="rounded-sm border border-white/10 bg-[#161616] p-6 md:grid md:grid-cols-[minmax(260px,340px)_1fr] md:gap-6 md:items-start">
+            <div className="mb-4 overflow-hidden rounded-sm bg-black/40 md:mb-0 md:h-full">
+              <img
+                src={foundingDirector.image}
+                alt={foundingDirector.name}
+                className="h-full min-h-[280px] w-full object-cover md:min-h-[360px]"
+              />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-white">{foundingDirector.name}</h2>
+              <p className="mb-4 text-sm uppercase tracking-[0.2em] text-charger-gold">{foundingDirector.title}</p>
+              <p className="whitespace-pre-line text-gray-300 leading-relaxed">{foundingDirector.bio}</p>
+            </div>
+          </article>
+        </>
+      ) : null}
     </InfoSection>
   );
 }
