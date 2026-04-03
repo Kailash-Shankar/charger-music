@@ -32,8 +32,8 @@ export default function DirectorsPage() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-white">{director.name}</h2>
-              <p className="mb-4 text-sm uppercase tracking-[0.2em] text-charger-gold">{director.title}</p>
+              <h2 className="text-xl font-display font-bold text-white sm:text-2xl">{director.name}</h2>
+              <p className="mb-4 text-xs uppercase tracking-[0.18em] text-charger-gold sm:text-sm sm:tracking-[0.2em]">{director.title}</p>
               <p className="whitespace-pre-line text-gray-300 leading-relaxed">{director.bio}</p>
             </div>
           </article>
@@ -52,8 +52,8 @@ export default function DirectorsPage() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-white">{foundingDirector.name}</h2>
-              <p className="mb-4 text-sm uppercase tracking-[0.2em] text-charger-gold">{foundingDirector.title}</p>
+              <h2 className="text-xl font-display font-bold text-white sm:text-2xl">{foundingDirector.name}</h2>
+              <p className="mb-4 text-xs uppercase tracking-[0.18em] text-charger-gold sm:text-sm sm:tracking-[0.2em]">{foundingDirector.title}</p>
               <p className="whitespace-pre-line text-gray-300 leading-relaxed">{foundingDirector.bio}</p>
             </div>
           </article>

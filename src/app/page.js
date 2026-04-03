@@ -34,18 +34,18 @@ export default function HomePage() {
         <div className="hero-note note-15">{"\u266F"}</div>
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.18)_100%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 text-center md:py-36">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-white/92">
+        <div className="relative mx-auto max-w-7xl px-6 py-20 text-center md:py-36">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-white/92 sm:text-sm sm:tracking-[0.28em]">
             Strawberry Crest High School &middot; Dover, FL
           </p>
-          <h1 className="mb-6 text-5xl font-display font-bold leading-tight md:text-7xl">
+          <h1 className="mb-6 text-4xl font-display font-bold leading-tight sm:text-5xl md:text-7xl">
             Music is <span className="text-charger-gold">ALIVE</span>
             <br />at Strawberry Crest!
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/88 md:text-xl">
+          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-white/88 sm:text-lg md:text-xl">
             An award-winning music program featuring the Marching Charger Band, Orchestra, Color Guard, Percussion, and more.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <a
               href={EXTERNAL_LINKS.bandJoinForm}
               target="_blank"
@@ -71,7 +71,7 @@ export default function HomePage() {
       </section>
 
       <section className="section-dark py-10 shadow-sm">
-        <div className="mx-auto grid max-w-4xl grid-cols-3 gap-6 px-6 text-center">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 px-6 text-center sm:grid-cols-3 sm:gap-6">
           {[
             { value: '2009', label: 'Founded' },
             { value: '126', label: 'Members at Peak' },
@@ -200,7 +200,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-[linear-gradient(180deg,#edf1f6_0%,#d5dbe4_100%)] px-6 py-12">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4 md:gap-4">
           {[
             { label: 'Calendar', href: EXTERNAL_LINKS.cuttime, external: true },
             { label: 'Concert Tickets', href: EXTERNAL_LINKS.tickets, external: true },

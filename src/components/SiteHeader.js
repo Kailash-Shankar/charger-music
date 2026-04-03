@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CONTACT_INFO, NAV_LINKS } from '@/data/siteData';
@@ -14,6 +15,11 @@ function isActive(pathname, href) {
 
 export default function SiteHeader() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <header className="border-b border-black/10 bg-[#151515] shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
@@ -57,10 +63,25 @@ export default function SiteHeader() {
               />
             </div>
           </div>
+
+          <button
+            type="button"
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            onClick={() => setMobileOpen((open) => !open)}
+            className="fixed right-4 top-4 z-50 inline-flex items-center gap-3 rounded-full border border-white/20 bg-[#111111]/90 px-5 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_18px_34px_rgba(0,0,0,0.28)] backdrop-blur-sm lg:hidden"
+          >
+            <span className="flex w-6 flex-col gap-1.5" aria-hidden="true">
+              <span className={`h-0.5 w-6 bg-white transition-all duration-200 ${mobileOpen ? 'translate-y-2 rotate-45' : ''}`} />
+              <span className={`h-0.5 w-6 bg-white transition-all duration-200 ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 w-6 bg-white transition-all duration-200 ${mobileOpen ? '-translate-y-2 -rotate-45' : ''}`} />
+            </span>
+            <span>{mobileOpen ? 'Close' : 'Menu'}</span>
+          </button>
         </div>
       </div>
 
-      <nav className="border-t border-black/10 bg-[linear-gradient(180deg,#eef1f5_0%,#d9dee5_100%)]">
+      <nav className="hidden border-t border-black/10 bg-[linear-gradient(180deg,#eef1f5_0%,#d9dee5_100%)] lg:block">
         <div className="mx-auto max-w-[1900px] overflow-x-auto px-3 py-2">
           <div className="flex min-w-max items-stretch gap-0 border border-black/10 bg-white/40">
             {NAV_LINKS.map((item) => {
@@ -84,6 +105,40 @@ export default function SiteHeader() {
           </div>
         </div>
       </nav>
+
+      {mobileOpen ? (
+        <div className="lg:hidden">
+          <div
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[1px]"
+            onClick={() => setMobileOpen(false)}
+            aria-hidden="true"
+          />
+          <nav className="fixed right-4 top-[4.75rem] z-50 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(180deg,#eef1f5_0%,#d9dee5_100%)] shadow-[0_24px_44px_rgba(0,0,0,0.24)]">
+            <div className="border-b border-black/10 bg-white/45 px-4 py-3 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7f0c12]">
+              Navigation
+            </div>
+            <div className="bg-white/70">
+              {NAV_LINKS.map((item) => {
+                const active = isActive(pathname, item.href);
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={[
+                      'flex min-h-[48px] items-center justify-between border-b border-black/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] transition-colors last:border-b-0',
+                      active ? 'bg-[#1f1f1f] text-white' : 'text-[#211f1d] hover:bg-white',
+                    ].join(' ')}
+                  >
+                    <span>{item.label}</span>
+                    <span className={active ? 'text-white/70' : 'text-[#a32020]'}>&rsaquo;</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
+        </div>
+      ) : null}
 
     </header>
   );
